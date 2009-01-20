@@ -1,26 +1,37 @@
-= sunshine
+= Sunshine
 
-* FIX (url)
+* http://github.com/Caged/sunshine
+* http://services.sunlightlabs.com/api/
 
 == DESCRIPTION:
 
-FIX (describe your package)
+A Ruby wrapper around the Sunlight labs API built on HTTParty.
 
 == FEATURES/PROBLEMS:
 
 * FIX (list of features or problems)
 
+== TODO
+
+* Look into mocking
+* Look into Capitol Words integration
+
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  Sunshine.api_key = YOUR_API_KEY
+  legislators = Legislator.find(:all, {:state => "OR"})
+  legislators.each do |legislator|
+    puts legislator.full_name
+    puts legislator.state
+  end
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* HTTParty, JSON
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install sunshine
 
 == LICENSE:
 
