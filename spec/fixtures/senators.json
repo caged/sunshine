@@ -1,0 +1,101 @@
+
+[
+{
+    "legislator": 
+    {
+        "district": "Junior Seat",
+         "title": "Sen",
+         "eventful_id": "P0-001-000016024-0",
+         "in_office": 1,
+         "state": "HI",
+         "votesmart_id": "53286",
+         "party": "D",
+         "email": "senator@akaka.senate.gov",
+         "crp_id": "N00007653",
+         "website": "http://akaka.senate.gov/public/index.cfm",
+         "fax": "202-224-2126",
+         "govtrack_id": "300001",
+         "firstname": "Daniel",
+         "middlename": "Kahikina",
+         "lastname": "Akaka",
+         "congress_office": "141 Hart Senate Office Building",
+         "bioguide_id": "A000069",
+         "webform": "http://akaka.senate.gov/public/index.cfm?FuseAction=Contact.Home",
+         "youtube_url": "",
+         "nickname": "",
+         "phone": "202-224-6361",
+         "fec_id": "S0HI00084",
+         "gender": "M",
+         "name_suffix": "Sr.",
+         "twitter_id": "",
+         "sunlight_old_id": "fakeopenID436",
+         "congresspedia_url": "http://www.sourcewatch.org/index.php?title=Daniel_Akaka"
+    }
+},
+ 
+{
+    "legislator": 
+    {
+        "district": "Senior Seat",
+         "title": "Sen",
+         "eventful_id": "P0-001-000016025-9",
+         "in_office": 1,
+         "state": "TN",
+         "votesmart_id": "15691",
+         "party": "R",
+         "email": "",
+         "crp_id": "N00009888",
+         "website": "http://alexander.senate.gov/",
+         "fax": "202-228-3398",
+         "govtrack_id": "300002",
+         "firstname": "Lamar",
+         "middlename": "",
+         "lastname": "Alexander",
+         "congress_office": "455 Dirksen Senate Office Building",
+         "bioguide_id": "A000360",
+         "webform": "http://alexander.senate.gov/public/index.cfm?FuseAction=Contact.Home",
+         "youtube_url": "http://www.youtube.com/lamaralexander",
+         "nickname": "",
+         "phone": "202-224-4944",
+         "fec_id": "S2TN00058",
+         "gender": "M",
+         "name_suffix": "",
+         "twitter_id": "",
+         "sunlight_old_id": "fakeopenID437",
+         "congresspedia_url": "http://www.sourcewatch.org/index.php?title=Lamar_Alexander"
+    }
+},
+ 
+{
+    "legislator": 
+    {
+        "district": "Senior Seat",
+         "title": "Sen",
+         "eventful_id": "P0-001-000016128-5",
+         "in_office": 1,
+         "state": "OR",
+         "votesmart_id": "27036",
+         "party": "D",
+         "email": "",
+         "crp_id": "N00007724",
+         "website": "http://www.wyden.senate.gov/",
+         "fax": "202-228-2717",
+         "govtrack_id": "300100",
+         "firstname": "Ron",
+         "middlename": "",
+         "lastname": "Wyden",
+         "congress_office": "223 Dirksen Senate Office Building",
+         "bioguide_id": "W000779",
+         "webform": "http://wyden.senate.gov/contact/",
+         "youtube_url": "http://www.youtube.com/SenRonWyden",
+         "nickname": "",
+         "phone": "202-224-5244",
+         "fec_id": "S6OR00110",
+         "gender": "M",
+         "name_suffix": "",
+         "twitter_id": "",
+         "sunlight_old_id": "fakeopenID535",
+         "congresspedia_url": "http://www.sourcewatch.org/index.php?title=Ron_Wyden"
+    }
+}
+]
