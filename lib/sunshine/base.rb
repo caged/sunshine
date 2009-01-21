@@ -5,22 +5,41 @@ require 'httparty'
 module Sunshine
   class Base  
     include HTTParty
-    
     base_uri "http://services.sunlightlabs.com/api"
     
-    attr_reader :raw_data
-      
+    class << self; attr_accessor :keys_to_exclude end
+    
+    # def self.inherited(subclass)
+    #   super
+    #   subclass.instance_variable_set("@keys_to_exclude", instance_variable_get("@keys_to_exclude"))
+    # end
+    # 
+    # def self.keys_to_exclude
+    #   self.instance_variable_get("@keys_to_exclude")
+    # end
+    
     def initialize(data)
+      @raw_data = data
+      excluded_keys = self.class.keys_to_exclude
+
+      puts "KEYS:#{excluded_keys} CLASS:#{self.class}"
+
       data.each do |key, value|
-        instance_variable_set("@#{key}", value)
-        self.class.class_eval do
-          define_method(key) { instance_variable_get("@#{key}") }
+        unless !excluded_keys.nil? && excluded_keys.include?(key.to_sym)
+          instance_variable_set("@#{key}", value)
+          self.class.class_eval do
+            define_method(key) { instance_variable_get("@#{key}") }
+          end
         end
       end    
     end
     
-    private
-    
+    def self.exclude(*keys)
+      keys = keys.collect {|k| k.to_sym }.uniq
+      self.keys_to_exclude = keys || []
+    end
+
+    private    
       def self.fetch(method, param_info)
         param_info = param_info.to_params if param_info.is_a?(Hash)
         begin

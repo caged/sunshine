@@ -26,6 +26,14 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 
 module Sunshine
+  # def self.included(base)
+  #   base.send :include, ModuleLevelInheritableAttributes
+  #   base.send(:mattr_inheritable, :keys_to_exclude)
+  #   base.instance_variable_set("@keys_to_exclude", [])
+  # end
+  # def self.included(base)
+  #   base.extend
+  # end
   # Set your Sunlight API key.
   #
   def api_key=(key)
@@ -39,9 +47,12 @@ module Sunshine
   end
   module_function :api_key
   
+  
   VERSION = '0.1.0'
 end
   
 require 'sunshine/base'
 require 'sunshine/district'
 require 'sunshine/legislator'
+require 'sunshine/disclosure_filing'
+require 'sunshine/lobbyist'
