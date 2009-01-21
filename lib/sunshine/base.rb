@@ -6,24 +6,12 @@ module Sunshine
   class Base  
     include HTTParty
     base_uri "http://services.sunlightlabs.com/api"
-    
+    attr_reader :raw_data
     class << self; attr_accessor :keys_to_exclude end
-    
-    # def self.inherited(subclass)
-    #   super
-    #   subclass.instance_variable_set("@keys_to_exclude", instance_variable_get("@keys_to_exclude"))
-    # end
-    # 
-    # def self.keys_to_exclude
-    #   self.instance_variable_get("@keys_to_exclude")
-    # end
     
     def initialize(data)
       @raw_data = data
       excluded_keys = self.class.keys_to_exclude
-
-      puts "KEYS:#{excluded_keys} CLASS:#{self.class}"
-
       data.each do |key, value|
         unless !excluded_keys.nil? && excluded_keys.include?(key.to_sym)
           instance_variable_set("@#{key}", value)
@@ -34,6 +22,18 @@ module Sunshine
       end    
     end
     
+    # If you need to define attributes that exist in the JSON data, you can exclude them from 
+    # being automatically defined.
+    #
+    # == Example
+    #  class Lobbyist < Base
+    #    exclude :firstname
+    #    
+    #    def firstname
+    #      @raw_data['firstname'].capitalize
+    #    end
+    #  end
+    #
     def self.exclude(*keys)
       keys = keys.collect {|k| k.to_sym }.uniq
       self.keys_to_exclude = keys || []
@@ -46,7 +46,7 @@ module Sunshine
           get("/#{method}.json?#{param_info}&apikey=#{Sunshine.api_key}")
         rescue Net::HTTPServerException => e
           puts "#{e.response.code} ERROR: #{e.response.body_parsed}"
-          return
+          return nil
         end
       end
     
