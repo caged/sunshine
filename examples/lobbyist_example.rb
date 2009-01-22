@@ -9,12 +9,21 @@ Sunshine.api_key = File.read(File.join(dir, '..', '.sunlight_api_key'))
 #   puts lob.full_name
 # end
 # 
-filing = Sunshine::DisclosureFiling.find(:first, {:client_name => 'Sunlight Foundation'})
-filing.lobbyists.each do |lob|
-  puts "-- #{lob.full_name}"
-end
+# filing = Sunshine::DisclosureFiling.find(:first, {:client_name => 'Sunlight Foundation'})
+# filing.lobbyists.each do |lob|
+#   puts "-- #{lob.full_name}"
+# end
+# 
+# results = Sunshine::Lobbyist.search('Thompson')
+# results.each do |score, lobbyist|
+#   puts "SCORE:#{score} LOBBYIST:#{lobbyist.full_name}"
+# end
 
-results = Sunshine::Lobbyist.search('Thompson')
-results.each do |score, lobbyist|
-  puts "SCORE:#{score} LOBBYIST:#{lobbyist.full_name}"
+results = Sunshine::Lobbyist.search('Willian Corr')
+william = results.first[1]
+puts william.full_name
+william.filings.each do |filing|
+  puts filing.registrant_name
 end
+#puts william.full_name
+#pp Sunshine::DisclosureFiling.find(:all, {:client_name => william.full_name})
