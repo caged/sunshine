@@ -26,16 +26,7 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 
 module Sunshine
-  # def self.included(base)
-  #   base.send :include, ModuleLevelInheritableAttributes
-  #   base.send(:mattr_inheritable, :keys_to_exclude)
-  #   base.instance_variable_set("@keys_to_exclude", [])
-  # end
-  # def self.included(base)
-  #   base.extend
-  # end
   # Set your Sunlight API key.
-  #
   def api_key=(key)
     @api_key = key
   end

@@ -27,7 +27,7 @@ describe Legislator do
   
   it "should find one legislator" do
     legislator = Legislator.find(:one, :lastname => 'smith')
-    legislator.should_not be_nil
+    legislator.should be_instance_of(Legislator)
   end
   
   it "should find many legislators" do

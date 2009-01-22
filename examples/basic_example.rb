@@ -4,9 +4,9 @@ require File.join(dir, 'sunshine')
 
 Sunshine.api_key = File.read(File.join(dir, '..', '.sunlight_api_key'))
 
-pelosi = Sunshine::Legislator.find(:all, {:title => 'Rep'})
-pelosi.each do |l|
-  puts "#{l.full_name}: #{l.district}"
+reprezintin = Sunshine::Legislator.find(:all, {:title => 'Rep'})
+reprezintin.each do |homeslice|
+  puts "#{homeslice.full_name}: #{homeslice.state}'s #{homeslice.district}"
 end
 
 many_dudes = Sunshine::Legislator.search('smith')

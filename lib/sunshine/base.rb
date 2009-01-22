@@ -5,7 +5,9 @@ require 'httparty'
 module Sunshine
   class Base  
     include HTTParty
+    
     base_uri "http://services.sunlightlabs.com/api"
+    
     attr_reader :raw_data
     class << self; attr_accessor :keys_to_exclude end
     
@@ -22,7 +24,7 @@ module Sunshine
       end    
     end
     
-    # If you need to define attributes that exist in the JSON data, you can exclude them from 
+    # If you need to define attributes that exist in JSON data, you can exclude them from 
     # being automatically defined.
     #
     # == Example
@@ -52,12 +54,6 @@ module Sunshine
     
       def self.initialize_one(obj)
         new(obj)
-      end
-    
-      def self.initialize_many(results, key)
-        results['response'][key].collect do |item|
-          initialize_one(item)
-        end
       end
   end
 end
