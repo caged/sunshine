@@ -1,2 +1,5 @@
 .sunlight_api_key
 .DS_Store
+pkg
+doc/*
+.source_index
