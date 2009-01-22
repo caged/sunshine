@@ -28,9 +28,16 @@ module Sunshine
     # == Examples
     #
     #    Lobbyist.search('Thompson')
-    #    Lobbyist.search('Thompson', {:threshold => 0.5})
+    #    Lobbyist.search('Thompson', {:threshold => 0.9})
     #    Lobbyist.search('Thompson', {:year => 2008})
     # 
+    # Note:  Sunlight recommends that you do not set the threshold below 0.9, which 
+    # is the default Sunlight uses.  Also, all searches are scoped to the current year 
+    # unless you explicitly set one.
+    #
+    # ATTN: There is a bug in the Sunlight API that shows an invalid param when you set
+    # the year.
+    #
     # Returns an <tt>Array<tt> of <tt>[score, <Lobbyist>]<tt> results.     
     def self.search(name_query, options = {})
       options = {:name => name_query}.merge!(options)
